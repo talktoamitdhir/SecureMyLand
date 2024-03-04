@@ -27,7 +27,13 @@ function App() {
         {appointmentList.map(eachAppointment=>(
           <AppointmentInfo 
           key={eachAppointment.id} 
-          eachAppointment={eachAppointment} />
+          eachAppointment={eachAppointment}
+          onAppointmentDelete = {
+            appointmentId => setAppointmentList(
+              appointmentList.filter(appointment => appointmentId !== appointment.id )
+            )
+          }
+          />
         ))
         }
       </ul>
